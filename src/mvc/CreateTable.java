@@ -13,7 +13,7 @@ public class CreateTable {
 		PropertyConfigurator.configure(log4jConfPath);
 		
 		GradeRepo model = new GradeRepo();
-//		model.createTableGrade();
+		model.createTableGrade();
 		MainView view = new MainView();
 		new GradeController(model, view);
 		

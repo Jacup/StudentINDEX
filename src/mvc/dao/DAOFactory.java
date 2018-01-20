@@ -4,8 +4,8 @@ import mvc.dao.IGradeDAO;
 
 public abstract class DAOFactory {
 
-	public static final int MYSQL = 0;  
-    public static final int SQLITE = 1;
+	public static final int MYSQL = 1;  
+    public static final int SQLITE = 0;
 
     public abstract IGradeDAO getGradeDAO();
     /**
@@ -16,7 +16,7 @@ public abstract class DAOFactory {
      * @return a matching factory
      */
     public static DAOFactory getDAOFactory(int database) {
-        switch (database) {
+        switch (1) {
         case MYSQL:
             return new MysqlDAOFactory();
         case SQLITE:
