@@ -40,10 +40,12 @@ public class MysqlGradeDAO implements IGradeDAO {
 		Connection conn = null;
         PreparedStatement preparedStatement = null;
         ResultSet result = null;
+       
+        
+       
         try {
             conn = MysqlDAOFactory.createConnection();
-            preparedStatement = conn.prepareStatement(CREATE_QUERY,
-                    Statement.RETURN_GENERATED_KEYS);
+            preparedStatement = conn.prepareStatement(CREATE_QUERY, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, grade.getGrade());
             preparedStatement.setString(2, grade.getWeight());
             preparedStatement.setString(3, grade.getDesc());
@@ -83,6 +85,7 @@ public class MysqlGradeDAO implements IGradeDAO {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
         ResultSet result = null;
+        
         try {
         	conn = MysqlDAOFactory.createConnection();
             preparedStatement = conn.prepareStatement(READ_QUERY);
@@ -96,8 +99,7 @@ public class MysqlGradeDAO implements IGradeDAO {
             						result.getString(3), 
             						result.getString(4)); 
             } else {
-                // TODO
-            	logger.info("Error. There is no grade with ID = "+ id);
+            	logger.info("Error. Nie istnieje ocena o id = "+ id);
             }
         } catch (SQLException e) {
             logger.error(e.getMessage());

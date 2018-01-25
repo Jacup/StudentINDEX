@@ -6,7 +6,7 @@ public class Grade {
 	private String grade;
 	private String weight;
 	private String desc;
-//	private Integer rokUrodzenia;
+
 	
 	public Grade(Integer id, String grade, String weight, String desc) {
 		this(grade, weight, desc);
@@ -17,7 +17,7 @@ public class Grade {
 		this.grade = grade;
 		this.weight = weight;
 		this.desc = desc;
-//		this.rokUrodzenia = rokUrodzenia;
+
 	}
 
 	public Integer getId() {
@@ -35,9 +35,5 @@ public class Grade {
 	public String getDesc() {
 		return desc;
 	}
-	
-//	public Integer getRokUrodzenia() {
-//		return rokUrodzenia;
-//	}
 }
 

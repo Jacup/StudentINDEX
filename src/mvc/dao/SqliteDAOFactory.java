@@ -13,11 +13,7 @@ public class SqliteDAOFactory extends DAOFactory {
     public static final String DRIVER = "org.sqlite.JDBC";
     public static final String DBURL = "jdbc:sqlite:test.db";
 
-    /**
-     * Method to create a Connection on the sqlite-database.
-     * 
-     * @return the Connection.
-     */
+
     public static Connection createConnection() {
         Connection conn = null;
         try {

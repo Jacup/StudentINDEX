@@ -2,6 +2,7 @@ package mvc.controller;
 
 import java.util.List;
 
+import mvc.dao.DAOFactory;
 import mvc.model.Grade;
 import mvc.repository.GradeRepo;
 import mvc.view.MainView;
@@ -14,10 +15,10 @@ public class GradeController {
 	public GradeController(GradeRepo model, MainView view) {
 		this.model = model;
 		this.view = view;
-		
 		view.setController(this);
 		
-		refreshGrades();
+		chooseDatabase(0);
+		
 	}
 	
 	public void insertGrade(Grade grade) {
@@ -39,5 +40,15 @@ public class GradeController {
 		List<Grade> grades = model.getGrades();
 		view.refreshGrades(grades);
 	}
+	
+	public void chooseDatabase(Integer baza) {
+        DAOFactory dao = DAOFactory.getDAOFactory(baza);
+        model.refreshDB(dao);
+        refreshGrades();
+    }
+	
+    public void CreateTable() {
+        model.createTableGrade();
+        refreshGrades();
+    }
 }
-

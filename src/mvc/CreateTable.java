@@ -6,6 +6,7 @@ import mvc.controller.GradeController;
 import mvc.repository.GradeRepo;
 import mvc.view.MainView;
 
+
 public class CreateTable {
 
 	public static void main(String[] args) {
@@ -13,7 +14,6 @@ public class CreateTable {
 		PropertyConfigurator.configure(log4jConfPath);
 		
 		GradeRepo model = new GradeRepo();
-		model.createTableGrade();
 		MainView view = new MainView();
 		new GradeController(model, view);
 		

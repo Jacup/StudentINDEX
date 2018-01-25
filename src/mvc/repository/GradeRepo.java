@@ -8,9 +8,14 @@ import mvc.model.Grade;
 
 public class GradeRepo implements IGradeRepo{
 
-	DAOFactory sqliteFactory = DAOFactory.getDAOFactory(DAOFactory.SQLITE);
-    IGradeDAO gradeDAO = sqliteFactory.getGradeDAO();
+	DAOFactory sqlFactory;
+    IGradeDAO gradeDAO;
 
+    public void refreshDB(DAOFactory factory) {
+        this.sqlFactory = factory;
+        this.gradeDAO = sqlFactory.getGradeDAO();
+    }
+    
 	@Override
 	public List<Grade> getGrades() {
         return gradeDAO.readAll();
@@ -34,18 +39,5 @@ public class GradeRepo implements IGradeRepo{
 	public void deleteGrade(Integer gradeId) {
 		gradeDAO.delete(gradeId);
 	}
-//	
-//	private void executeCommand(String command) {
-//        try {
-//            Class.forName("org.sqlite.JDBC");
-//            Connection conn = DriverManager.getConnection("jdbc:sqlite:test.db");
-//            Statement stmt = conn.createStatement();
-//            stmt.executeUpdate(command);
-//            stmt.close();
-//            conn.close();
-//        }  catch (Exception ex) {
-//        	ex.printStackTrace();
-//        }
-//	}
 }
 

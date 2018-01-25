@@ -14,16 +14,13 @@ public class MysqlDAOFactory extends DAOFactory {
     private static final String URL = "jdbc:mysql://localhost/index?autoReconnect=true&useSSL=false";
     private static final String USERNAME = "root";
     private static final String USERPASSWORD = "root";
-    /**
-     * Method to create a Connection on the mysql-database.
-     * 
-     * @return the Connection.
-     */
+
+    
     public static Connection createConnection() {
         Connection conn = null;
         try {
             Class.forName(DRIVER);
-            conn = DriverManager.getConnection(URL, USERNAME, USERPASSWORD );
+            conn = DriverManager.getConnection(URL, USERNAME, USERPASSWORD);
         } catch (SQLException e) {
             logger.error(e.getMessage());
         } catch (ClassNotFoundException e) {
