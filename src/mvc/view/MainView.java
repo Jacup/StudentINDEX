@@ -27,15 +27,15 @@ public class MainView extends JFrame {
     private JTextField tfGrade, tfWeight, tfDescription;
     private JTable table;
     private DefaultTableModel tableModel;
-    private JPanel tablePanel, menuPanel;
-    private JButton addGrade, editGrade, deleteGrade, editGradeSave, utworz_tabele;
+    private JPanel tablePanel;
+    private JButton editGradeSave;
     int location_x = 800;
     int location_y = 300;
 
     public MainView() {
         super();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(800, 600);
+        this.setSize(400, 500);
         this.setTitle("Student INDEX");
         this.setLocationRelativeTo(null);
         this.setResizable(true);
@@ -50,16 +50,9 @@ public class MainView extends JFrame {
         table.setAutoCreateRowSorter(true);
 
         JScrollPane scrollPane = new JScrollPane(table, VERTICAL_SCROLLBAR_AS_NEEDED, HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setPreferredSize(new Dimension(770, 360));
+        scrollPane.setPreferredSize(new Dimension(380, 360));
         tablePanel.add(scrollPane);
         this.add(tablePanel);
-
-        
-        menuPanel = new JPanel();
-        menuPanel.setBorder(BorderFactory.createTitledBorder("Narzędzia"));
-        menuPanel.setLayout(new BoxLayout(menuPanel, BoxLayout.Y_AXIS));
-        menuPanel.setPreferredSize(new Dimension(220,150));
-        this.add(menuPanel, BorderLayout.SOUTH);
 
         initializeMenubar();
         
