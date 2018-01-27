@@ -83,11 +83,11 @@ public class MainView extends JFrame {
         exit.setToolTipText("Zakończ program");
         
         JRadioButtonMenuItem mysqlButton = new JRadioButtonMenuItem("MySQL");
-        mysqlButton.setSelected(true);
+        mysqlButton.setSelected(false);
         chooseDB.add(mysqlButton);
         
         JRadioButtonMenuItem sqliteButton = new JRadioButtonMenuItem("SQLite");
-        sqliteButton.setSelected(false);
+        sqliteButton.setSelected(true);
         chooseDB.add(sqliteButton);
         
 

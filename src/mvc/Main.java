@@ -14,6 +14,7 @@ public class Main {
 		PropertyConfigurator.configure(log4jConfPath);
 		
 		GradeRepo model = new GradeRepo();
+//		model.createTableGrade();
 		MainView view = new MainView();
 		new GradeController(model, view);
 		

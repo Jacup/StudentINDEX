@@ -1,6 +1,6 @@
 # Student INDEX
 ## University project on Object-oriented Programming in Java <br><br>
-Simple app to store your grades at school. 
+Simple app to store your grades at school. <br>
 **Author:** Jakub Gramburg <br>
 **Github:** https://github.com/jacup <br>
 

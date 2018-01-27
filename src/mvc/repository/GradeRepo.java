@@ -8,8 +8,11 @@ import mvc.model.Grade;
 
 public class GradeRepo implements IGradeRepo{
 
-	DAOFactory sqlFactory;
-    IGradeDAO gradeDAO;
+	
+	DAOFactory sqlFactory = DAOFactory.getDAOFactory(DAOFactory.SQLITE);
+    IGradeDAO gradeDAO = sqlFactory.getGradeDAO();
+	
+
 
     public void refreshDB(DAOFactory factory) {
         this.sqlFactory = factory;
@@ -40,4 +43,3 @@ public class GradeRepo implements IGradeRepo{
 		gradeDAO.delete(gradeId);
 	}
 }
-
